@@ -16,6 +16,25 @@ if ( !function_exists( 'origen_get_post_meta' ) ) {
 	}
 }
 
+/**
+ * Funciones para los widgets
+ */
+
+if ( !function_exists( 'origen_new_widget' ) ) {
+	function origen_new_widget( $widget_name = 'Barra lateral' ) {
+		$id = trim($widget_name);
+		array_push($list_widgets, $list_widgets[]= register_sidebar(array(
+			'name' => $widget_name,
+			'id' => $id,
+			'description' => 'Zona widget de ' . $widget_name,
+			'class' => 'origen-widget',
+			'before_widget' => '<div class="box-sidebar">',
+			'after_widget' => '</div>',
+			'before_title' => '<div class="widget-title">',
+			'after_title' => '</div>',
+		)));
+	}
+}
 
 /**
  * Funciones para el personalizador

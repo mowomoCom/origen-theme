@@ -14,27 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 require get_template_directory() . '/inc/class.origen.php';
 
 
-/**
- * Funciones para los widgets
- */
-
-if ( !function_exists( 'origen_new_widget' ) ) {
-	function origen_new_widget( $widget_name = 'Barra lateral' ) {
-		$id = trim($widget_name);
-		array_push($list_widgets, $list_widgets[]= register_sidebar(array(
-			'name' => $widget_name,
-			'id' => $id,
-			'description' => 'Zona widget de ' . $widget_name,
-			'class' => 'origen-widget',
-			'before_widget' => '<div class="box-sidebar">',
-			'after_widget' => '</div>',
-			'before_title' => '<div class="widget-title">',
-			'after_title' => '</div>',
-		)));
-	}
-}
-
-
 /*  ZONA DE WIDGET BARRA LATERAL
 =============================================== */
 
