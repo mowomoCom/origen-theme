@@ -1,4 +1,4 @@
-# Tema-Sindri
+# Tema-Origen
 
 <div  align="center">
 <br>
@@ -7,13 +7,13 @@
 <br>
 </div>
 
-# 📦 `Tema Sindri`
+# 📦 `Origen`
 
-> `Sindri` es un tema base creado por `mowomo.com` con ❤️ para el desarrollo de temas para WordPress.
+> `Origen` es un tema base creado por `mowomo.com` con ❤️ para el desarrollo de temas para WordPress.
 > `Version 1.0.0`
 
 ## Configuración VSCODE
-Para utilizar el SCSS correctamente necesitaras la siguiente configuración del setting.json en VSCODE para las versiones 1.x.x de `Sindri`:
+Para utilizar el SCSS correctamente necesitaras la siguiente configuración del setting.json en VSCODE para las versiones 1.x.x de `Origen`:
 <pre>
 {
     "editor.insertSpaces": false,
@@ -41,7 +41,7 @@ Para utilizar el SCSS correctamente necesitaras la siguiente configuración del 
 
 ## Metodología CSS
 
-`Sindri` ha sido desarrollado con `SCSS` utilizando la metodología `Block, Element, Modifier (BEM)` para el nombrado de clases CSS.
+`Origen` ha sido desarrollado con `SCSS` utilizando la metodología `Block, Element, Modifier (BEM)` para el nombrado de clases CSS.
 
 ## SCSS
 ### Variables
@@ -154,7 +154,7 @@ Ejemplo de uso:
 
 ## Estándares de codificación CSS
 
-`Sindri` al estar realizado con **SCSS** basaremos los estandares en la escritura de **CSS** con este lenguaje de precompilado.
+`Origen` al estar realizado con **SCSS** basaremos los estandares en la escritura de **CSS** con este lenguaje de precompilado.
 
 ### Estructura
 
@@ -308,13 +308,13 @@ Los `bloques` los voy a poder reutilizar en cualquier momento y por ello ahorrar
 
 #### Marcado BEM con SCSS
 
-`Sindri` utiliza `SCSS` para el desarrollo de las hojas de estilos del tema. Esto lo debemos combinar con el marcado `BEM` que hemos explicado anteriormente.
+`Origen` utiliza `SCSS` para el desarrollo de las hojas de estilos del tema. Esto lo debemos combinar con el marcado `BEM` que hemos explicado anteriormente.
 
 #### Anidación
 
 Con `SCSS` puedes organizar tu hoja de estilo de manera que se asemeja a la de `HTML`.
 
-Con `Sindri` no anidamos más de 3 elementos.
+Con `Origen` no anidamos más de 3 elementos.
 
 Un caso practico:
 ```html
