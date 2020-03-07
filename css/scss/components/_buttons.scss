@@ -1,0 +1,38 @@
+%buttons{
+	border: none;
+    border-radius: 28px;
+    box-shadow: none;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    margin: 0;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    overflow-wrap: break-word;
+}
+
+.wp-block-button{
+
+}
+
+.no-border-radius {
+    border-radius: 0!important;
+}
+
+.is-style-fill{
+
+}
+
+.is-style-outline{
+	a{
+		background-color: transparent;
+		border: 2px solid;
+	}
+}
+
+.btn-cuadrado{
+    @extend %buttons;
+    @extend .no-border-radius;
+}

@@ -1,0 +1,60 @@
+.site-content{
+	background-color: #fff;
+
+	& > div{
+		// padding: {
+		// 	top: 2rem;
+		// 	bottom: 2rem;
+		// }
+	}
+
+	&__body > *{
+		@extend .max;
+	}
+
+
+
+	& > .sidebar_r{
+		@extend .max;
+		display: flex;
+	}
+
+	& > .sidebar_l{
+		@extend .sidebar_r;
+	}
+
+	.sidebar_r,
+	.sidebar_l{
+		main{
+			width: 70%;
+		}
+		aside{
+			width: 30%;
+		}
+	}
+
+	&__main{
+		//padding: 2rem 2rem;
+		background-color: #fff;
+	}
+
+	&__post-thumbnail{
+		width: 100%;
+		height: pxrem(450);
+		overflow: hidden;
+		position: relative;
+
+		img{
+			position: absolute;
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&__title{
+		margin-top: 1rem;
+	}
+}
+
+

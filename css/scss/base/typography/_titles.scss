@@ -1,0 +1,128 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $fuente-titulos;
+    font-weight: 700;
+	letter-spacing: inherit;
+	line-height: 1.25;
+	margin: pxrem(40) 0 pxrem(25);
+	word-break: break-word;
+}
+
+h1 {
+	font-size: pxrem(36);
+	line-height: 1.138888889;
+}
+
+.t-h1{
+	@extend h1;
+}
+
+h2 {
+	font-size: pxrem(32);
+}
+
+.t-h2{
+	@extend h2;
+}
+
+h3 {
+    font-size: pxrem(28);
+}
+
+.t-h3{
+	@extend h3;
+}
+
+h4 {
+    font-size: pxrem(24);
+}
+
+.t-h4{
+	@extend h4;
+}
+
+h5 {
+    font-size: pxrem(21);
+}
+
+.t-h5{
+	@extend h5;
+}
+
+h6 {
+	font-size: pxrem(16);
+	letter-spacing: 0.03125em;
+	text-transform: uppercase;
+}
+
+.t-h6{
+	@extend h6;
+}
+
+@include tablet{
+	h1,
+	h2,
+	h3{
+		margin: pxrem(60) 0 pxrem(35);
+	}
+
+	h4,
+	h5,
+	h6{
+		margin: pxrem(45) 0 pxrem(25);
+	}
+
+	h1 {
+		font-size: pxrem(64);
+	}
+
+	h2 {
+		font-size: pxrem(48);
+	}
+
+	h3 {
+		font-size: pxrem(40);
+	}
+
+	h4 {
+		font-size: pxrem(32);
+	}
+
+	h5 {
+		font-size: pxrem(24);
+	}
+
+	h6 {
+		font-size: pxrem(18);
+	}
+}
+
+@include desktop{
+	h1 {
+		font-size: pxrem(84);
+	}
+
+	h2 {
+		font-size: pxrem(48);
+	}
+
+	h3 {
+		font-size: pxrem(40);
+	}
+
+	h4 {
+		font-size: pxrem(32);
+	}
+
+	h5 {
+		font-size: pxrem(24);
+	}
+
+	h6 {
+		font-size: pxrem(18);
+	}
+}

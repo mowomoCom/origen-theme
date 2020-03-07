@@ -1,31 +1,21 @@
-<?php get_header(); ?>
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-<div class="index flexblog max">
+get_header(); ?>
 
-	<main class="entradas-blog">
+<div class="site-content__body full_width">
 
-		<?php get_template_part( 'template-parts/rastro-migas' ); ?>
+	<?php do_action( 'origen_after_main_archive' ); ?>
 
-		<h1><?php _e( 'Blog', 'mowomo-base' ); ?></h1>
+	<main class="origen_archive_main">
 
-		<?php
-		if ( have_posts() ) :
-
-			while ( have_posts() ) : the_post();
-
-				get_template_part( 'template-parts/entrada/entrada' );
-
-			endwhile;
-
-		endif;
-
-		get_template_part( 'template-parts/paginacion' );
-		?>
+		<?php origen_loop( 'partials/content', 'archive_single' ); ?>
 
 	</main>
 
-	<?php get_template_part( 'sidebar' ); ?>
+	<?php do_action( 'origen_before_main_archive' ); ?>
 
 </div>
-
 <?php get_footer(); ?>

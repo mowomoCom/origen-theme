@@ -1,7 +1,7 @@
 <section class="comentarios"><a name="comments" id="comments"></a>
 <?php if ( have_comments() )  ?>
 
-		<h3><?php comments_number (__('No hay comentarios', 'mowomo-base'), __('Hay un comentario', 'mowomo-base'), __('Hay % comentarios ', 'mowomo-base')); ?></h3>
+		<h3><?php comments_number (__('No hay comentarios', 'origen'), __('Hay un comentario', 'origen'), __('Hay % comentarios ', 'origen')); ?></h3>
 
 			<section class="listado-comentarios">
 
@@ -40,12 +40,12 @@
 
 
 						<div class="autor-comentario">
-							<?php printf(__('<cite class="fn">%s </cite> <span class="Dice"> says:</span>','mowomo-base'), get_comment_author_link()) ?>
+							<?php printf(__('<cite class="fn">%s </cite> <span class="Dice"> says:</span>','origen'), get_comment_author_link()) ?>
 						</div>
 						</div>
 
 				<?php if ($comment->comment_approved == '0') : ?>
-						<em class="comment-awaiting-moderation"><?php _e('Tu comentario está a la espera de ser moderado.','mowomo-base') ?></em>
+						<em class="comment-awaiting-moderation"><?php _e('Tu comentario está a la espera de ser moderado.','origen') ?></em>
 						<br />
 				<?php endif; ?>
 
@@ -71,7 +71,7 @@
 
 				<div id="respond">
 
-				<h3><?php comment_form_title( __('Deja un comentario','mowomo-base'), __('Deja un comentario para %s','mowomo-base' ) ); ?></h3>
+				<h3><?php comment_form_title( __('Deja un comentario','origen'), __('Deja un comentario para %s','origen' ) ); ?></h3>
 
 				<div id="cancel-comment-reply">
 					<small><?php cancel_comment_reply_link() ?></small>
@@ -79,20 +79,20 @@
 				</div>
 
 				<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
-				<p><?php printf(__('Necesitas <a href="%s">iniciar sesión</a> para comentar.','mowomo-base'), wp_login_url( get_permalink() )); ?></p>
+				<p><?php printf(__('Necesitas <a href="%s">iniciar sesión</a> para comentar.','origen'), wp_login_url( get_permalink() )); ?></p>
 				<?php else : ?>
 
 				<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform" class="commentform">
 
 				<?php if ( is_user_logged_in() ) : ?>
 
-				<p><?php printf(__('Iniciada sesión como <a href="%1$s">%2$s</a>.','mowomo-base'), get_edit_user_link(), $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php esc_attr_e('Salir'); ?>"><?php _e('Cerrar sesión&raquo;','mowomo-base'); ?></a></p>
+				<p><?php printf(__('Iniciada sesión como <a href="%1$s">%2$s</a>.','origen'), get_edit_user_link(), $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php esc_attr_e('Salir'); ?>"><?php _e('Cerrar sesión&raquo;','origen'); ?></a></p>
 
 				<?php else : ?>
 
-				<p><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> placeholder="<?php _e('Nombre (requerido)', 'mowomo-base'); ?>" required /></p>
+				<p><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> placeholder="<?php _e('Nombre (requerido)', 'origen'); ?>" required /></p>
 
-				<p><input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> placeholder="<?php _e('Email (requerido)', 'mowomo-base'); ?>" required /></p>
+				<p><input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> placeholder="<?php _e('Email (requerido)', 'origen'); ?>" required /></p>
 
 
 				<!--<label for="url"><?php _e('Sitio Web'); ?></label>
@@ -101,20 +101,20 @@
 
 				<?php endif; ?>
 
-				<p><textarea name="comment" id="comment" tabindex="4" placeholder="<?php _e('Tu comentario (requerido)', 'mowomo-base'); ?>" required></textarea></p>
+				<p><textarea name="comment" id="comment" tabindex="4" placeholder="<?php _e('Tu comentario (requerido)', 'origen'); ?>" required></textarea></p>
 
-				<input type = "checkbox" required = ""> <?php _e( 'He leido y acepto la' , 'mowomo-base' ); ?> <a href="/privacy-policy/" target="_blank"> <?php _e( 'política de privacidad' , 'mowomo-base' ); ?> </a> <?php _e( 'de base.com' , 'mowomo-base' ); ?>
+				<input type = "checkbox" required = ""> <?php _e( 'He leido y acepto la' , 'origen' ); ?> <a href="/privacy-policy/" target="_blank"> <?php _e( 'política de privacidad' , 'origen' ); ?> </a> <?php _e( 'de base.com' , 'origen' ); ?>
 
-				<br><input type = "checkbox" required = ""> <?php _e( 'Acepto que los datos que he proporcionado (con la excepción del correo electrónico) se publicarán.' , 'mowomo-base' ); ?>
+				<br><input type = "checkbox" required = ""> <?php _e( 'Acepto que los datos que he proporcionado (con la excepción del correo electrónico) se publicarán.' , 'origen' ); ?>
 
-				<p><input name="submit" type="submit" id="submit" class="btn-accion" tabindex="5" value="<?php esc_attr_e('Enviar comentario','mowomo-base'); ?>" />
+				<p><input name="submit" type="submit" id="submit" class="btn-accion" tabindex="5" value="<?php esc_attr_e('Enviar comentario','origen'); ?>" />
 				<?php comment_id_fields(); ?>
 				</p>
 				<?php do_action('comment_form', $post->ID); ?>
 
 				</form>
-				<strong> <?php _e( '¿Qué hacemos con tus datos?' , 'mowomo-base' ); ?> </strong> </br>
-				<?php _e( 'En base.com le pedimos su nombre y correo electrónico (no publicamos el correo electrónico) para identificarlo entre el resto de las personas que comentan en el blog.' , 'mowomo-base' ); ?>
+				<strong> <?php _e( '¿Qué hacemos con tus datos?' , 'origen' ); ?> </strong> </br>
+				<?php _e( 'En base.com le pedimos su nombre y correo electrónico (no publicamos el correo electrónico) para identificarlo entre el resto de las personas que comentan en el blog.' , 'origen' ); ?>
 
 				<?php endif; // If registration required and not logged in ?>
 				</div>

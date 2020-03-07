@@ -1,0 +1,22 @@
+{
+	"editor.insertSpaces": false,
+	"editor.renderWhitespace": "none",
+	"window.zoomLevel": 0,
+	"git.autofetch": true,
+	"liveSassCompile.settings.formats": [
+		// This is Default.
+		{
+			"format": "expanded",
+			"extensionName": ".css",
+			"savePath": "~/../"
+		},
+		// More Complex
+		{
+			"format": "compressed",
+			"extensionName": ".min.css",
+			"savePath": "~/../"
+		}
+	],
+	"git.confirmSync": false,
+	"git.enableSmartCommit": true
+}

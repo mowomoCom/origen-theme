@@ -1,86 +1,53 @@
 <?php
-
-// INTERNACIONALIZACIÓN
-add_action('after_setup_theme', 'idiomas_setup');
-function idiomas_setup(){
-    load_theme_textdomain('nombre_tema', get_template_directory() . '/languages');
+/**
+ * mowomo Origen - Funciones
+ *
+ * @package Origen
+ */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-function mwm_style(){
+/**
+ * Añade todas las funciones que requiere el tema para funcionar.
+ */
+require get_template_directory() . '/inc/class.origen.php';
 
-  wp_register_style('style', get_template_directory_uri().'/styles/css/style.min.css', array(), '1.0');
 
-  wp_enqueue_style('style');
+/**
+ * Funciones para los widgets
+ */
 
+if ( !function_exists( 'origen_new_widget' ) ) {
+	function origen_new_widget( $widget_name = 'Barra lateral' ) {
+		$id = trim($widget_name);
+		array_push($list_widgets, $list_widgets[]= register_sidebar(array(
+			'name' => $widget_name,
+			'id' => $id,
+			'description' => 'Zona widget de ' . $widget_name,
+			'class' => 'origen-widget',
+			'before_widget' => '<div class="box-sidebar">',
+			'after_widget' => '</div>',
+			'before_title' => '<div class="widget-title">',
+			'after_title' => '</div>',
+		)));
+	}
 }
-add_action('wp_enqueue_scripts', 'mwm_style');
 
-/* INCLUIR MENUS
-=============================================== */
-add_theme_support('menus');
-if (function_exists('register_nav_menus')) {
-register_nav_menus (
-array (
-'MenuSuperior' => 'Menu Superior',
-));
-}
 
 /*  ZONA DE WIDGET BARRA LATERAL
 =============================================== */
-function mwm_registrar_sidebar(){
-  register_sidebar(array(
-   'name' => 'Barra Lateral',
-   'id' => 'sidebarblog',
-   'description' => 'Barra lateral de la revista',
-   'class' => 'sidebar-blog',
-   'before_widget' => '<div class="box-sidebar">',
-   'after_widget' => '</div>',
-   'before_title' => '<div class="widget-title">',
-   'after_title' => '</div>',
-  ));
-}
-add_action( 'widgets_init', 'mwm_registrar_sidebar');
 
-/* VIDEOS RESPONSIVE AUTOMATICOS
-============================================ */
-if(!function_exists('video_content_filter')) {
- function video_content_filter($content) {
+origen_new_widget( 'Barra lateral' );
+origen_new_widget( 'Zona nueva 2' );
 
-// busca algún iFrame en la página
- $pattern = '/<iframe.*?src=".*?(vimeo|youtu\.?be).*?".*?<\/iframe>/';
- preg_match_all($pattern, $content, $matches);
+origen_create_panel('prueba', 'Seccion de prueba', 'Esta es la descrioción');
 
- foreach ($matches[0] as $match) {
-// iFrame encontrado, ahora lo envolvemos en un DIV ...
- $wrappedframe = '<div class="rwd-video">' . $match . '</div>';
+origen_create_section('misection', 'prueba');
 
-// Intercambia el original con el video, ahora encerrado
- $content = str_replace($match, $wrappedframe, $content);
- }
- return $content;
- }
-// Aplicar a areas de contenido de la página o entrada
- add_filter( 'the_content', 'video_content_filter' );
+origen_create_setting('selector ejemplo', 'misection', 'select', array(
+	'full_width' => __( 'Pantalla completa' ),
+	'sidebar_r' => __( 'Barra lateral derecha' ))
+);
 
-// Aplicar a los widgets si se quiere
- add_filter( 'widget_text', 'video_content_filter' );
-}
-
-// Imágenes destacadas
-if ( function_exists( 'add_theme_support' ) ) {
-  add_theme_support( 'post-thumbnails'); }
-
-// SOPORTE PARA TITLE-TAG
-add_theme_support( 'title-tag' );
-
-/* ELIMINAR LA VERSION DE WP DE LA URL */
-
-function remove_src_version ( $url ) {
-//Regex quitar el parametro ver
-$url = preg_replace('/([?&])' . 'ver' . '=[^&]+(&|$)/','$1',$url);
-//Eliminar caracteres erroneos al final
-if (preg_match("/\?$/", $url) || preg_match("/\&$/", $url))
-return substr($url, 0, -1);
-else
-return $url;
-}
+origen_create_setting('el texto qui', 'misection', 'text', 'placeholder de ejemplo');

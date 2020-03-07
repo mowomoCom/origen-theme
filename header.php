@@ -1,4 +1,14 @@
+<?php
+/**
+ * Este es el header de nuestro tema.
+ *
+ * En este template se encuentra las aperturas del html y el head.
+ * Además tiene la apertura de los principales contenedores del tema
+ * como son el body, .site, el header y .site-content.
+ */
+?>
 <!DOCTYPE html>
+
 <html <?php language_attributes(); ?>>
 
 	<head>
@@ -6,17 +16,57 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name=viewport content="width=device-width, initial-scale=1">
 
-		<!-- FUENTES -->
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,600i|Open+Sans:400,400i,600,600i" rel="stylesheet">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-		<!-- JS -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="<?php echo get_template_directory_uri() . "/js/menu.js"; ?>"></script>
-
 		<?php wp_head(); ?>
 
 	</head>
 
-	<body <?php body_class( ); ?>>
+	<body <?php body_class(); ?>>
 
-		<?php get_template_part( '/template-parts/header/header', 'cabecera' ); ?>
+		<?php
+		/**
+		 * wp_body_open
+		 * Te permite añadir contenido justo despues de la apertura del body.
+		 */
+		wp_body_open(); ?>
+
+		<div class="<?php echo apply_filters( 'origen_site_classes', 'site' ); ?>">
+
+			<?php
+			/**
+			 * Hook: origen_before_header
+			 * Te permite anclar antes de de abrir la etiqueta <header>
+			 */
+			do_action( 'origen_before_header' ) ?>
+
+			<header class="<?php echo apply_filters( 'origen_header_classes', 'site__header type_one' ); ?>">
+
+				<?php
+				/**
+				 * Hook: origen_before_header
+				 * Te permite anclar dentro de la etiqueta <header>
+				 *
+				 * @hooked origen_open_container_max	- 5
+				 * @hooked origen_site_logo				- 10
+				 * @hooked origen_principal_menu		- 20
+				 * @hooked origen_close_container_max	- 30
+				 *
+				 */
+				do_action( 'origen_header' ); ?>
+
+			</header>
+
+			<?php
+			/**
+			 * Hook: origen_after_header
+			 * Te permite anclar despues de cerrar la etiqueta <header>
+			 */
+			do_action( 'origen_after_header' ) ?>
+
+			<div class="<?php echo apply_filters( 'origen_site_content_clasess', 'site-content' ); ?>">
+			<?php
+			/**
+			 * Hook: origen_before_content
+			 * Te permite anclar justo antes de del div que contiene a la sidebar y al content.
+			 * Este contenido no se ve afectado por como ordenemos el contenido (full-width, sidebar).
+			 */
+			do_action( 'origen_before_content' ); ?>

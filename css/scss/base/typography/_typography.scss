@@ -1,0 +1,110 @@
+body,
+button,
+input,
+select,
+textarea {
+    color: $color-negro;
+    font-family: $fuente-textos;
+    font-size: pxrem($standar-font-size);
+    font-weight: normal;
+    word-break: break-word;
+    line-height: 1;
+}
+
+@import "./titles";
+
+hr {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: -1px;
+}
+
+p {
+    margin: 1.2em 0;
+    line-height: 1.5;
+}
+
+b,
+strong {
+    font-weight: 600;
+}
+
+dfn,
+cite,
+em,
+i,
+q {
+    font-style: italic;
+}
+
+em em,
+em i,
+i em,
+i i,
+cite em,
+cite i {
+	font-weight: bolder;
+}
+
+big {
+	font-size: 1.2em;
+}
+
+small {
+	font-size: 0.75em;
+}
+
+ins {
+	text-decoration: underline;
+}
+
+a {
+    color: $color-primario;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: $color-primario;
+    text-decoration: none;
+}
+
+blockquote {
+    border-left: 4px solid $color-primario;
+    color: #666;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.6;
+    padding: 0.5rem 1rem;
+}
+
+blockquote {
+    quotes: """";
+}
+
+q {
+    quotes: "“""”""‘""’";
+}
+
+
+::-moz-selection {
+    background: $color-primario;
+    color: $color-blanco;
+}
+
+::selection {
+    background: $color-primario;
+    color: $color-blanco;
+}
+
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}
+
+li {
+    line-height: 1.5;
+    margin-bottom: .5rem;
+}

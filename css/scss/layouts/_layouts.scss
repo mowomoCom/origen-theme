@@ -1,0 +1,27 @@
+body,
+html{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.max{
+	max-width: $ancho-max;
+	padding: {
+		left:1rem;
+		right: 1rem;
+	}
+	margin: {
+		left: auto !important;
+		right: auto !important;
+	}
+}
+
+figure {
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
