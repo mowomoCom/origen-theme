@@ -1,0 +1,82 @@
+/* BANNER PRINCIPAL */
+.banner{
+
+	> img {
+		object-fit: cover;
+		object-position: top;
+		height: 450px;
+		width: 100%;
+		z-index: -1;
+		position: absolute;
+	}
+
+	&__info{
+		&.max {
+			display: flex;
+			align-items: center;
+			height: 450px;
+			flex-direction: row-reverse;
+
+		}
+
+	}
+
+	&__contenido {
+		width: 100%;
+		color: #fff;
+	}
+
+	&--principal{
+
+		.btn-accion {
+			margin: 2rem 0 0 0;
+			text-align: center;
+	
+			a {
+				display: block;
+			}
+		}
+	}
+
+}
+
+
+
+@include tablet {
+
+    /* BANNER PRINCIPAL */
+		.banner{
+
+			&__contenido {
+				width: 60%;
+		
+					p {
+						font-size: 1.2rem;
+					}
+		
+				}
+
+			&--principal{
+				.btn-accion {
+					text-align: left;
+				
+					a {
+						display: initial;
+						text-align: left;
+					}
+				}
+			}
+		}
+
+}
+
+@include desktop {
+
+    /* BANNER PRINCIPAL */
+		.banner{
+			&__contenido {
+        width: 50%;
+			}
+		}
+
+}

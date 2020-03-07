@@ -1,0 +1,39 @@
+.cabecera {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+
+	.logo {
+		margin-left: 1rem;
+		padding: 1rem 0;
+
+		img {
+			display: block;
+			height: $alto-logo;
+		}
+	}
+
+}
+
+@include desktop{
+
+	.cabecera {
+
+		.logo{
+			margin-left: 0;
+		}
+
+		.hamburguesa{
+			display: none;
+		}
+	}
+
+}

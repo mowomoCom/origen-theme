@@ -1,0 +1,29 @@
+body {
+    background: $color-blanco;
+}
+
+.max {
+    margin: 0 auto;
+    max-width: $ancho-max;
+    padding: 0 1rem;
+}
+
+.flexblog {
+	margin: 0 auto 2rem;
+}
+
+@include tablet{
+	.flexblog{
+		display: flex;
+		justify-content: space-between;
+
+		main{
+			width: 65%;
+		}
+
+		.sidebar{
+			width: 30%;
+			margin-top: 1.3rem;
+		}
+	}
+}

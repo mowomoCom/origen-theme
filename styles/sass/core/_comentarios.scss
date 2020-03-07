@@ -1,0 +1,20 @@
+ul.commentlist {
+    list-style: none;
+    padding: 0;
+}
+
+ul.commentlist > .comment {
+    background: $color-fondo-comentario;
+}
+
+.comment {
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+ul.children {
+    list-style: none;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    background: $color-fondo-com-child;
+}
