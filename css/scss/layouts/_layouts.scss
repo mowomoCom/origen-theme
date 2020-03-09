@@ -1,8 +1,19 @@
+html {
+	box-sizing: border-box;
+	-ms-overflow-style: scrollbar;
+}
+
 body,
 html{
 	margin: 0;
 	padding: 0;
 	border: none;
+}
+
+*,
+*::before,
+*::after {
+box-sizing: inherit;
 }
 
 .max{

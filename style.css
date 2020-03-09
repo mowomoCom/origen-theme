@@ -647,19 +647,11 @@ ul.wp-block-gallery:not(.alignwide):not(.alignfull):not(.alignright):not(.alignl
 }
 
 /* Block: Image ------------------------------ */
-<<<<<<< HEAD
 .alignwide {
   max-width: 95% !important;
 }
 
 .alignfull {
-=======
-.wp-block-image.alignwide {
-  max-width: 95% !important;
-}
-
-.wp-block-image.alignfull {
->>>>>>> 793d261bdc32832e20ba1dea1d5b76b81486e744
   max-width: 100% !important;
   padding: 0 !important;
 }
@@ -939,7 +931,7 @@ h6,
   font-weight: 700;
   letter-spacing: inherit;
   line-height: 1.25;
-  margin: 2.5rem 0 1.5625rem;
+  margin: 2.5em 0 1.5em;
   word-break: break-word;
 }
 
@@ -1065,11 +1057,7 @@ hr {
 }
 
 p {
-<<<<<<< HEAD
   margin: 1.2em 0;
-=======
-  margin: 1rem 0;
->>>>>>> 793d261bdc32832e20ba1dea1d5b76b81486e744
   line-height: 1.5;
 }
 
@@ -1123,7 +1111,7 @@ blockquote {
   font-size: 1rem;
   font-style: italic;
   line-height: 1.6;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
 }
 
 blockquote {
@@ -1154,7 +1142,7 @@ ol {
 
 li {
   line-height: 1.5;
-  margin-bottom: .5rem;
+  margin-bottom: .5em;
 }
 
 /* SITE HEADER */
@@ -1429,7 +1417,6 @@ li {
   text-align: center;
   text-decoration: none;
   overflow-wrap: break-word;
-<<<<<<< HEAD
 }
 
 .no-border-radius, .btn-cuadrado {
@@ -1443,26 +1430,6 @@ li {
 
 .site-content {
   background-color: #fff;
-=======
-}
-
-.no-border-radius, .btn-cuadrado {
-  border-radius: 0 !important;
-}
-
-.is-style-outline a {
-  background-color: transparent;
-  border: 2px solid;
-}
-
-.site-content {
-  background-color: #fff;
-}
-
-.site-content > div {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
->>>>>>> 793d261bdc32832e20ba1dea1d5b76b81486e744
 }
 
 .site-content > .sidebar_r, .site-content > .sidebar_l {
@@ -1568,11 +1535,24 @@ li {
   width: 100%;
 }
 
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
 body,
 html {
   margin: 0;
   padding: 0;
   border: none;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 .max, .site-content__body > *, .site-content > .sidebar_r, .site-content > .sidebar_l {
@@ -1598,19 +1578,6 @@ img {
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -ms-overflow-style: scrollbar;
-}
-
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-
 .container {
   width: 100%;
   padding-right: 15px;

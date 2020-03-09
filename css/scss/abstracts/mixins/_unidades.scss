@@ -25,8 +25,3 @@
 
 	@return #{$em}em;
 }
-
-@function font-size($px: 16){
-	$rem: $px/16;
-	@return "font-size: #{$rem}rem";
-}
