@@ -117,7 +117,7 @@ if ( !class_exists( 'Origen' )) {
          */
         public function register_menus(){
 
-            $this->register_menu( 'MenuPrincipal', __( 'Menú principal', 'origen' ) );
+            $this->register_menu( 'MenuPrincipal', __( 'Primary menu', 'origen' ) );
 
         }
 

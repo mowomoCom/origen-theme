@@ -1,7 +1,7 @@
 <section class="comentarios"><a name="comments" id="comments"></a>
 <?php if ( have_comments() )  ?>
 
-		<h3><?php comments_number (__('No hay comentarios', 'origen'), __('Hay un comentario', 'origen'), __('Hay % comentarios ', 'origen')); ?></h3>
+		<h3><?php comments_number (__('No comments yet.', 'origen'), __('1 Comment', 'origen'), __('% Comments', 'origen')); ?></h3>
 
 			<section class="listado-comentarios">
 
@@ -33,19 +33,22 @@
 
 						<div class="fecha-comentario">
 							<?php
-								/* translators: 1: date, 2: time */
-								printf( __('%1$s'), get_comment_date('d.m.Y'),  get_comment_time()) ?><?php edit_comment_link(__('(Edit)'),'  ','' );
-							?>
+								/* translators: 1. date, 2. time */
+								printf( __('%1$s %2$s', 'origen'), get_comment_date(__('d.m.Y', 'origen')),  get_comment_time()) ?><?php edit_comment_link(__('(Edit)', 'origen'),'  ','' );
+								?>
 						</div><!--/.fecha-comentario-->
 
 
 						<div class="autor-comentario">
-							<?php printf(__('<cite class="fn">%s </cite> <span class="Dice"> says:</span>','origen'), get_comment_author_link()) ?>
+							<?php
+								/* translators: 1. comment author */
+								printf(__('<cite class="fn">%s</cite> <span class="Dice">says:</span>','origen'), get_comment_author_link())
+								?>
 						</div>
 						</div>
 
 				<?php if ($comment->comment_approved == '0') : ?>
-						<em class="comment-awaiting-moderation"><?php _e('Tu comentario está a la espera de ser moderado.','origen') ?></em>
+						<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.','origen') ?></em>
 						<br />
 				<?php endif; ?>
 
@@ -71,7 +74,13 @@
 
 				<div id="respond">
 
-				<h3><?php comment_form_title( __('Deja un comentario','origen'), __('Deja un comentario para %s','origen' ) ); ?></h3>
+				<h3>
+					<?php 					
+						comment_form_title( __('Leave a Reply','origen'),
+						/* translators: 1: author of the comment being replied to */
+						__('Leave a Reply to %s','origen' ) );
+						?>
+				</h3>
 
 				<div id="cancel-comment-reply">
 					<small><?php cancel_comment_reply_link() ?></small>
@@ -79,42 +88,58 @@
 				</div>
 
 				<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
-				<p><?php printf(__('Necesitas <a href="%s">iniciar sesión</a> para comentar.','origen'), wp_login_url( get_permalink() )); ?></p>
+				<p>
+					<?php
+						/* translators: 1: login link */
+						printf(__('<a href="%s">Log in</a> to leave a Comment.','origen'), wp_login_url( get_permalink() )); 
+						?>
+				</p>
 				<?php else : ?>
 
 				<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform" class="commentform">
 
 				<?php if ( is_user_logged_in() ) : ?>
 
-				<p><?php printf(__('Iniciada sesión como <a href="%1$s">%2$s</a>.','origen'), get_edit_user_link(), $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php esc_attr_e('Salir'); ?>"><?php _e('Cerrar sesión&raquo;','origen'); ?></a></p>
+				<p><?php 
+					/* translators: 1. user profile link, 2. username */
+					printf(__('Logged in as <a href="%1$s">%2$s</a>.','origen'), get_edit_user_link(), $user_identity); 
+					?> 
+					<a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php esc_attr_e('Log out', 'origen'); ?>"><?php _e('Log out','origen'); ?></a></p>
 
 				<?php else : ?>
 
-				<p><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> placeholder="<?php _e('Nombre (requerido)', 'origen'); ?>" required /></p>
+				<p><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> placeholder="<?php _e('Name (required)', 'origen'); ?>" required /></p>
 
-				<p><input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> placeholder="<?php _e('Email (requerido)', 'origen'); ?>" required /></p>
+				<p><input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> placeholder="<?php _e('Email (required)', 'origen'); ?>" required /></p>
 
 
-				<!--<label for="url"><?php _e('Sitio Web'); ?></label>
+				<!--<label for="url"><?php _e('Website', 'origen'); ?></label>
 				<p><input type="text" name="url" id="url" value="<?php echo  esc_attr($comment_author_url); ?>" tabindex="3" /></p>-->
 
 
 				<?php endif; ?>
 
-				<p><textarea name="comment" id="comment" tabindex="4" placeholder="<?php _e('Tu comentario (requerido)', 'origen'); ?>" required></textarea></p>
+				<p><textarea name="comment" id="comment" tabindex="4" placeholder="<?php _e('Your comment (required)', 'origen'); ?>" required></textarea></p>
 
-				<input type = "checkbox" required = ""> <?php _e( 'He leido y acepto la' , 'origen' ); ?> <a href="/privacy-policy/" target="_blank"> <?php _e( 'política de privacidad' , 'origen' ); ?> </a> <?php _e( 'de base.com' , 'origen' ); ?>
+				<input type="checkbox" required=""> 
+					<?php
+						/* translators: 1. site name 2. Privacy Policy */
+						printf( _e( 'I have read and agree with the %1$s %2$s', 'origen' ), get_bloginfo( 'name' ), '<a href="/privacy-policy/" target="_blank">' . __('Privacy Policy', 'origen') . '</a>' );
+						?>
 
-				<br><input type = "checkbox" required = ""> <?php _e( 'Acepto que los datos que he proporcionado (con la excepción del correo electrónico) se publicarán.' , 'origen' ); ?>
+				<br><input type="checkbox" required=""> <?php _e( 'I agree that the data I provided (except email) will be published.' , 'origen' ); ?>
 
-				<p><input name="submit" type="submit" id="submit" class="btn-accion" tabindex="5" value="<?php esc_attr_e('Enviar comentario','origen'); ?>" />
+				<p><input name="submit" type="submit" id="submit" class="btn-accion" tabindex="5" value="<?php esc_attr_e('Submit Comment','origen'); ?>" />
 				<?php comment_id_fields(); ?>
 				</p>
 				<?php do_action('comment_form', $post->ID); ?>
 
 				</form>
-				<strong> <?php _e( '¿Qué hacemos con tus datos?' , 'origen' ); ?> </strong> </br>
-				<?php _e( 'En base.com le pedimos su nombre y correo electrónico (no publicamos el correo electrónico) para identificarlo entre el resto de las personas que comentan en el blog.' , 'origen' ); ?>
+				<strong> <?php _e( 'What we do with your personal data', 'origen' ); ?> </strong> </br>
+				<?php 
+					/* translators: 1. site URL */
+					printf( __( 'At %s we ask for your name and email (we do not publish the email) to identify you among the rest of the people who comment on the blog.' , 'origen' ), get_bloginfo('wpurl')); 
+					?>
 
 				<?php endif; // If registration required and not logged in ?>
 				</div>

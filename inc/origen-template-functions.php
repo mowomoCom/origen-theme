@@ -46,7 +46,7 @@ if ( ! function_exists( 'origen_principal_menu' ) ) {
 			<span></span>
 		</div>
 
-		<nav class="site-menu" role="navigation" aria-label="<?php esc_html_e( 'Principal menu', 'origen' ); ?>">
+		<nav class="site-menu" role="navigation" aria-label="<?php esc_html_e( 'Primary menu', 'origen' ); ?>">
 			<?php
 			wp_nav_menu(
 				array(
@@ -175,7 +175,7 @@ if ( ! function_exists( 'origen_archive_post' ) ) {
 				<p class="post__categoria"><?php the_category(' '); ?></p>
 			</header>
 			<p class="post__resumen"><?php echo get_the_excerpt(); ?></p>
-			<a href="<?php the_permalink(); ?>" class="btn btn--post" rel="nofollow"><?php _e('Leer más', 'hardrain'); ?></a>
+			<a href="<?php the_permalink(); ?>" class="btn btn--post" rel="nofollow"><?php _e('Read more', 'origen'); ?></a>
 		</div>
 
 		</article>
