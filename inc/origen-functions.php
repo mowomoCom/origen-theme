@@ -21,12 +21,13 @@ if ( !function_exists( 'origen_get_post_meta' ) ) {
  */
 
 if ( !function_exists( 'origen_new_widget' ) ) {
-	function origen_new_widget( $widget_name = 'Barra lateral' ) {
+	function origen_new_widget( $widget_name = 'Sidebar' ) {
 		$id = trim($widget_name);
 		array_push($list_widgets, $list_widgets[]= register_sidebar(array(
 			'name' => $widget_name,
 			'id' => $id,
-			'description' => 'Zona widget de ' . $widget_name,
+			/* translators: 1. widget name */
+			'description' => wp_sprintf(__('%s widget zone', 'origen'), $widget_name ),
 			'class' => 'origen-widget',
 			'before_widget' => '<div class="box-sidebar">',
 			'after_widget' => '</div>',

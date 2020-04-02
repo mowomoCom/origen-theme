@@ -2,7 +2,7 @@
 
 	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="formbuscar">
 
-		<input type="search" name="s" id="s" placeholder="Buscar" class="buscar" required/>
+		<input type="search" name="s" id="s" placeholder="<?php _e('Search...', 'origen') ?>" class="buscar" required/>
 
 		<button><i class="fa fa-search" aria-hidden="true"></i></button>
 

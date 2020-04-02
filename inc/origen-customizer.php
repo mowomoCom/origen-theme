@@ -10,8 +10,8 @@ if ( ! function_exists('origen_theme_customizer')){
 
 		require_once get_template_directory() . "/inc/libraries/mwm-custom-controls/custom-controls.php";
 		$wp_customize->add_panel( 'origen_panel', array(
-			'title' => __( 'Configuración de Origen Theme', 'origen' ),
-			'description' => __( 'Aqui podrás modificar todas las configuraciones del tema', 'origen' ),
+			'title' => __( 'Origen Theme Setup', 'origen' ),
+			'description' => __( 'Here you can setup all the theme settings', 'origen' ),
 			'priority' => 160,
 			'capability' => 'edit_theme_options',
 		));
@@ -33,12 +33,12 @@ if ( ! function_exists('origen_theme_customizer')){
 		$wp_customize->add_control( 'origen_page_layout', array(
 			'type' => 'select',
 			'section' => 'origen_layout', // Add a default or your own section
-			'label' => __( 'Tipo de layout del las páginas' ),
-			'description' => __( 'Podrás seleccionar entre pantalla completa, con sidebar a la izquierda o con sindebar a la derecha', 'origen' ),
+			'label' => __( 'Page Layout Type' ),
+			'description' => __( 'You can select Full Width, Left Sidebar or Right Sidebar.', 'origen' ),
 			'choices' => array(
-				'full_width' => __( 'Pantalla completa' ),
-				'sidebar_r' => __( 'Barra lateral derecha' ),
-				'sidebar_l' => __( 'Barra lateral izquierda' ),
+				'full_width' => __( 'Full width', 'origen' ),
+				'sidebar_r' => __( 'Right Sidebar', 'origen' ),
+				'sidebar_l' => __( 'Left Sidebar', 'origen' ),
 			),
 		) );
 
@@ -72,7 +72,7 @@ if ( ! function_exists('origen_theme_customizer')){
 					  'type' => 'select',
 					  'section' => $setting[1], // Add a default or your own section
 					  'label' => __( $setting[0] ),
-					  'description' => __( 'Podrás seleccionar entre pantalla completa, con sidebar a la izquierda o con sindebar a la derecha', 'origen' ),
+					  'description' => __('You can select Full Width, Left Sidebar or Right Sidebar.', 'origen' ),
 					  'choices' => $setting[3],
 					) );
 				}else{
