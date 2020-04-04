@@ -1,9 +1,9 @@
         </div><!-- .site-content -->
 
-        <?php do_action( 'orige_before_footer' ); ?>
+        <?php do_action( 'origen_before_footer' ); ?>
 
         <footer>
-            <?php do_action( 'orige_footer' ); ?>
+            <?php do_action( 'origen_footer' ); ?>
         </footer>
 
         <?php do_action( 'origen_after_footer' ); ?>
