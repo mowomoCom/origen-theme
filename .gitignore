@@ -1,0 +1,8 @@
+composer.lock
+wp-config.php
+wp-config-ddev.php
+wordpress/
+vendor/
+.ddev/
+content/mu-plugins/
+content/plugins/

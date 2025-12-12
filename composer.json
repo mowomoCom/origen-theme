@@ -1,0 +1,37 @@
+{
+	"name": "mowomo/wordpress-skeleton",
+	"type": "project",
+	"require": {
+		"johnbillion/user-switching": "^1.9",
+		"humanmade/mu-plugins-loader": "^1.0",
+		"yoast/wordpress-seo": "*",
+		"roots/wordpress": "^6.9"
+	},
+	"extra": {
+		"installer-paths": {
+			"content/mu-plugins/{$name}/": [
+				"type:wordpress-muplugin",
+				"johnbillion/user-switching"
+			],
+			"content/plugins/{$name}/": [
+				"type:wordpress-plugin"
+			],
+			"content/themes/{$name}/": [
+				"type:wordpress-theme"
+			]
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"humanmade/mu-plugins-loader": true,
+			"roots/wordpress-core-installer": true
+		}
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	]
+}

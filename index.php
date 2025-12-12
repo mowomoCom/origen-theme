@@ -1,47 +1,17 @@
 <?php
 /**
- * Este template muestra lista los post type
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
  */
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
 
-get_header(); ?>
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define( 'WP_USE_THEMES', true );
 
-<div class="site-content__body full_width">
-
-	<?php
-	/**
-	 * Hook: origen_after_main_archive
-	 * Este hook te permite anclar justo antes del contenedor que
-	 * contiene el loop y el listado de posts.
-	 *
-	 * @since 0.1.0
-	 */
-	do_action( 'origen_after_main_archive' ); ?>
-
-	<main class="origen_archive_main">
-
-		<?php
-		/**
-		 * Aquí con el loop de WordPress cargamos el template-part
-		 * de archive_single.
-		 *
-		 * @since 0.1.0
-		 */
-		origen_loop( 'partials/content', 'archive_single' ); ?>
-
-	</main>
-
-	<?php
-	/**
-	 * Hook: origen_before_main_archive
-	 * Este hook te permite anclar justo despues del contenedor que
-	 * contiene el loop.
-	 *
-	 * @since 0.1.0
-	 */
-	do_action( 'origen_before_main_archive' ); ?>
-
-</div>
-<?php get_footer(); ?>
+/** Loads the WordPress Environment and Template */
+require __DIR__ . '/wordpress/wp-blog-header.php';
