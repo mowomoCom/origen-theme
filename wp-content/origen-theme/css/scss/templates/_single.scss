@@ -1,0 +1,24 @@
+.site-single{
+
+	& > .post{
+
+		& > *{
+			max-width: pxrem(800);
+			margin: 0 auto;
+			font-size: 1rem;
+			@include media(768){
+				font-size: 1.25rem;
+			}
+		}
+
+	}
+
+	.site-content__post-thumbnail{
+		max-width: pxrem(1200);
+
+		img{
+			width: 100%;
+		}
+	}
+
+}

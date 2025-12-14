@@ -1,0 +1,35 @@
+/*
+Theme Name: Origen
+Theme URI: https://www.mowomo.com
+Description:  Tema desarrollado a medida para origen
+Version: 0.1.0
+Design: mowomo
+Author: mowomo
+Author URI: https://www.mowomo.com
+
+Text Domain: origen
+Domain Path: /languages
+
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+*/
+
+@import './scss/base/normalize';
+@import './scss/abstracts/mixins/mixins';
+
+@import './scss/abstracts/variables/variables';
+@import './scss/base/base';
+@import './scss/components/gutenberg';
+@import './scss/base/typography/typography';
+
+@import './scss/components/main-header/header';
+@import './scss/components/buttons';
+
+@import './scss/templates/page';
+@import './scss/templates/archive';
+@import './scss/templates/single';
+
+@import './scss/layouts/layouts';
+
+@import './scss//base/grid-system/bootstrap-grid';

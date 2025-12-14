@@ -1,0 +1,38 @@
+.site-content__body .origen_archive_main {
+	max-width: pxrem(1232);
+}
+.origen_archive_main {
+	.post {
+		margin-bottom: 2rem;
+		&__imagen {
+			padding: 0;
+			position: relative;
+
+			img {
+				display: block;
+				@include media(768) {
+					position: absolute;
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+
+		&__contenido {
+			border-left: 0;
+			padding: 1.5rem 1rem 3rem;
+			box-shadow: 4px 1px 5px rgba(0, 0, 0, 0.15);
+		}
+
+		&__titulo {
+			margin: 1rem 0;
+			font-size: 2rem;
+		}
+
+		a {
+			color: #000;
+			text-decoration: none;
+		}
+	}
+}

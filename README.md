@@ -11,7 +11,6 @@ Este proyecto contiene un tema personalizado y varios plugins de uso común inst
 ```bash
 git clone [URL-DEL-REPOSITORIO] wp-content
 composer install
-ddev config --project-type=wordpress
+ddev config --update
 ddev start
-ddev wp core install --url='$DDEV_PRIMARY_URL' --title='Mowomo Project' --admin_user=admin --admin_password=admin --admin_email=admin@mowomo.com
 ```

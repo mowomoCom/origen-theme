@@ -1,0 +1,89 @@
+//	@mixin mobile: Este mixin permite indicar el @media para el tamaño de 400px
+//		- Las variables las puedes configurar desde _variables.scss
+
+@mixin mobile {
+	@media screen and (min-width: pxem($width-mobile)) {
+		@content;
+	}
+}
+
+//	@mixin hmobile: Este mixin permite indicar el @media para el tamaño de 600px
+//		- Las variables las puedes configurar desde _variables.scss
+@mixin hmobile {
+	@media screen and (min-width: pxem($width-hmobile)) {
+		@content;
+	}
+}
+
+//	@mixin tablet: Este mixin permite indicar el @media para el tamaño de 800px
+//		- Las variables las puedes configurar desde _variables.scss
+@mixin tablet {
+	@media screen and (min-width: pxem($width-tablet)) {
+		@content;
+	}
+}
+
+//	@mixin htablet: Este mixin permite indicar el @media para el tamaño de 1000px
+//		- Las variables las puedes configurar desde _variables.scss
+@mixin htablet {
+	@media screen and (min-width: pxem($width-htablet)) {
+		@content;
+	}
+}
+
+//	@mixin desktop: Este mixin permite indicar el @media para el tamaño de 1200px
+//		- Las variables las puedes configurar desde _variables.scss
+@mixin desktop {
+	@media screen and (min-width: pxem($width-desktop)) {
+		@content;
+	}
+}
+
+//	@mixin tablet: Este mixin permite indicar el @media para el tamaño de 1400px
+//		- Las variables las puedes configurar desde _variables.scss
+@mixin hdesktop {
+	@media screen and (min-width: pxem($width-hdesktop)) {
+		@content;
+	}
+}
+
+//	@mixin media: Permite hacer media querys de manera personalizada
+//		-	$width: este argumento se utiliza para añadir el breakpoint
+
+
+@mixin media ($width, $maxwidth:0) {
+
+	@if $width == mobile{
+		@include media($width-mobile){
+			@content;
+		}
+	}@else if $width == tablet{
+		@include media($width-tablet){
+			@content;
+		}
+	}@else if $width == desktop{
+		@include media($width-desktop){
+			@content;
+		}
+	}
+	@else{
+
+		$minwidth: pxem($width);
+		@if $maxwidth == 0{
+			@media screen and (min-width:$minwidth){
+				@content;
+			}
+		}@else{
+			$maxwidth: pxem($maxwidth - 1);
+			@if $width == 0{
+				@media screen and (max-width:$maxwidth){
+					@content;
+				}
+			}@else{
+				@media screen and (min-width:$minwidth) and (max-width:$maxwidth){
+					@content;
+				}
+			}
+		}
+	}
+}

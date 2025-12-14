@@ -1,0 +1,191 @@
+# Copyright (C) 2020 mowomo
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Origen 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/origen-theme\n"
+"Last-Translator: Yordan Soares <contacto@yordansoar.es>\n"
+"Language-Team: Yordan Soares <contacto@yordansoar.es>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-04-01T14:05:33-04:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.3.0\n"
+"X-Domain: origen\n"
+
+#. Theme Name of the theme
+msgid "Origen"
+msgstr ""
+
+#. Theme URI of the theme
+#. Author URI of the theme
+msgid "https://www.mowomo.com"
+msgstr ""
+
+#. Description of the theme
+msgid "Tema desarrollado a medida para origen"
+msgstr ""
+
+#. Author of the theme
+msgid "mowomo"
+msgstr ""
+
+#: comments.php:4
+msgid "No comments yet."
+msgstr ""
+
+#: comments.php:4
+msgid "1 Comment"
+msgstr ""
+
+#: comments.php:4
+msgid "% Comments"
+msgstr ""
+
+#. translators: 1. date, 2. time
+#: comments.php:37
+msgid "%1$s %2$s"
+msgstr ""
+
+#. translators: 1. date, 2. time
+#: comments.php:37
+msgid "d.m.Y"
+msgstr ""
+
+#. translators: 1. date, 2. time
+#: comments.php:37
+msgid "(Edit)"
+msgstr ""
+
+#. translators: 1. comment author
+#: comments.php:45
+msgid "<cite class=\"fn\">%s</cite> <span class=\"Dice\">says:</span>"
+msgstr ""
+
+#: comments.php:51
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: comments.php:79
+msgid "Leave a Reply"
+msgstr ""
+
+#. translators: 1: author of the comment being replied to
+#: comments.php:81
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#. translators: 1: login link
+#: comments.php:94
+msgid "<a href=\"%s\">Log in</a> to leave a Comment."
+msgstr ""
+
+#. translators: 1. user profile link, 2. username
+#: comments.php:105
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr ""
+
+#: comments.php:107
+msgid "Log out"
+msgstr ""
+
+#: comments.php:111
+msgid "Name (required)"
+msgstr ""
+
+#: comments.php:113
+msgid "Email (required)"
+msgstr ""
+
+#: comments.php:116
+msgid "Website"
+msgstr ""
+
+#: comments.php:122
+msgid "Your comment (required)"
+msgstr ""
+
+#. translators: 1. site name 2. Privacy Policy
+#: comments.php:127
+msgid "I have read and agree with the %1$s %2$s"
+msgstr ""
+
+#. translators: 1. site name 2. Privacy Policy
+#: comments.php:127
+msgid "Privacy Policy"
+msgstr ""
+
+#: comments.php:130
+msgid "I agree that the data I provided (except email) will be published."
+msgstr ""
+
+#: comments.php:132
+msgid "Submit Comment"
+msgstr ""
+
+#: comments.php:138
+msgid "What we do with your personal data"
+msgstr ""
+
+#. translators: 1. site URL
+#: comments.php:141
+msgid "At %s we ask for your name and email (we do not publish the email) to identify you among the rest of the people who comment on the blog."
+msgstr ""
+
+#: inc/class.origen.php:120
+#: inc/origen-template-functions.php:49
+msgid "Primary menu"
+msgstr ""
+
+#: inc/origen-customizer.php:13
+msgid "Origen Theme Setup"
+msgstr ""
+
+#: inc/origen-customizer.php:14
+msgid "Here you can setup all the theme settings"
+msgstr ""
+
+#: inc/origen-customizer.php:21
+msgid "Origen Page Layout"
+msgstr ""
+
+#: inc/origen-customizer.php:37
+#: inc/origen-customizer.php:75
+msgid "You can select Full Width, Left Sidebar or Right Sidebar."
+msgstr ""
+
+#: inc/origen-customizer.php:39
+msgid "Full width"
+msgstr ""
+
+#: inc/origen-customizer.php:40
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/origen-customizer.php:41
+msgid "Left Sidebar"
+msgstr ""
+
+#. translators: 1. widget name
+#: inc/origen-functions.php:30
+msgid "%s widget zone"
+msgstr ""
+
+#: inc/origen-template-functions.php:109
+#: partials/content-page.php:59
+#: partials/content-single.php:59
+msgid "Pages:"
+msgstr ""
+
+#: inc/origen-template-functions.php:178
+msgid "Read more"
+msgstr ""
+
+#: searchform.php:5
+msgid "Search..."
+msgstr ""
+
+#: sidebar.php:3
+msgid "Sidebar"
+msgstr ""
