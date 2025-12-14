@@ -25,6 +25,9 @@ if ( getenv( 'IS_DDEV_PROJECT' ) == 'true' ) {
 	/** WP_SITEURL location */
 	defined( 'WP_SITEURL' ) || define( 'WP_SITEURL', WP_HOME . '/wordpress' );
 
+	/** WP_CONTENT_DIR location */
+	define( 'WP_CONTENT_DIR', __DIR__ . '/content' );
+
 	/** Enable debug */
 	defined( 'WP_DEBUG' ) || define( 'WP_DEBUG', false );
 
